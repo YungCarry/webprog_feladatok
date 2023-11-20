@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cell:hover {
+      background-color: lightyellow;
+    }
+
+    .red {
+      background-color: red;
+      color: white;
+    }
+
+    .blue {
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div id="matrixContainer" class="matrix"></div>
+
+    <script>
+    let cellColors = ['', '', '', ''];
+    let currentColor = 'red';
+
+    function changeColor(element) {
+        const index = element.dataset.index;
+        const cell = document.getElementById(`cell${index}`);
+
+        if (cellColors[index] === '') {
+        cell.style.backgroundColor = currentColor;
+        cellColors[index] = currentColor;
+        currentColor = (currentColor === 'red') ? 'blue' : 'red';
+        }
+    }
+
+    function renderMatrix() {
+        const matrixContainer = document.getElementById('matrixContainer');
+        let content = '';
+
+        for (let i = 0; i < 4; i++) {
+        content += `<div id="cell${i}" class="cell" onclick="changeColor(this)" data-index="${i}"></div>`;
+        }
+
+        matrixContainer.innerHTML = content;
+    }
+
+    renderMatrix();
+    </script>
+
+</body>
+</html>

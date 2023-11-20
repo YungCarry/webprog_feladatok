@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. feladat</title>
+  </head>
+  <body>
+    <h3>Az összkeresetük:</h3>
+    <script>
+      let fizetes = {
+        Anna: 2100,
+        Cecil: 1890,
+        Emil: 2050,
+        Gerald: 2920,
+      };
+
+      
+      let osszeg = 0;
+      for (let i in fizetes) {
+        if (fizetes.hasOwnProperty(i)) {
+          osszeg += fizetes[i];
+        }
+      }
+      document.write(osszeg);
+    </script>
+    
+  </body>
+</html>

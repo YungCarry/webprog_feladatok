@@ -1,3 +1,6 @@
-const str = document.getElementById("inputText");
-const reverse = str => str.split('').reverse().join('');
-console.log(str);
+function reverse() {
+    const inputElement = document.getElementById("inputText");
+    const str = inputElement.value;
+    const reversedStr = str.split('').reverse().join('');
+    console.log(reversedStr);
+}

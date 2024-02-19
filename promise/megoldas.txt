@@ -1,0 +1,5 @@
+1. Modositottam az elérő linket, hibaüzenetet kaptam.
+2. Zavartalanul fut tovább a kód.
+3. Más ID-u, más sorendbebn tölti be a képeket.
+4.A hibaüzenet errora vált.
+5.

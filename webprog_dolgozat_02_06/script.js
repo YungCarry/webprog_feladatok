@@ -35,8 +35,6 @@ console.log(meanVsMedian([7, 14, -70]), ' >> median');
 // Swap the head and the tail
 function swapHeadAndTail(arr) {
     
-        console.log(arr)
-
 }
 
 console.log(swapHeadAndTail([ 1, 2, 3, 4, 5 ]), [ 4, 5, 3, 1, 2 ]);

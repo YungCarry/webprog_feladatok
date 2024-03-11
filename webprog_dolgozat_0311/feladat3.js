@@ -8,6 +8,7 @@ function pairs(ar) {
     return count;
   }
   //Tesztelés
+  
 console.log("----- 3. feladat -----");
 console.log(pairs([1,2,5,8,-4,-3,7,6,5]),3);
 console.log(pairs([21, 20, 22, 40, 39, -56, 30, -55, 95, 94]),2);

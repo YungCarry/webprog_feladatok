@@ -15,7 +15,9 @@ function mineLocation(field){
             if(field[i][j] == 1)
               {
                 return [i,j];
+                console.log(i)
               }
           }
       }
  }
+

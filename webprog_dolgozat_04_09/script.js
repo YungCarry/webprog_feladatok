@@ -42,27 +42,20 @@ console.log(sortArraysIgnoringCase([]), [])
 
 // 3. feladat Insert dashes
 const insertDash = num => {
-    function insertDashes(num) {
-
-        const numStr = num.toString();
 
 
-        const digits = numStr.split('').map(Number);
 
+    num = num.toString().split('')
 
-        let result = '';
-        for (let i = 0; i < digits.length; i++) {
-            if (digits[i] % 2 !== 0) {
-                result += digits[i];
-                if (i < digits.length - 1 && digits[i + 1] % 2 !== 0) {
-                    result += '-';
-                }
-            }
+    for (let i = 0; i < num.length; i++) {
+        if (num[i] % 2 > 0 && num[i + 1] % 2 > 0) {
+            num[i] = num[i] + '-'
         }
-
-        return result;
     }
-    insertDashes();
+
+    return num.join('')
+
+
 }
 
 console.log('\n3. feladat\n')

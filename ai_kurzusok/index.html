@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Courses</title>
+</head>
+<body>
+    <h1>Courses</h1>
+    <ul id="courses-list"></ul>
+    <button id="new-course-btn">New Course</button>
+
+    <div id="course-details" style="display: none;">
+        <h2>Course Details</h2>
+        <p id="course-name"></p>
+        <p id="course-description"></p>
+        <h3>Students</h3>
+        <ul id="students-list"></ul>
+        <button id="add-student-btn">Add Student</button>
+    </div>
+
+    <div id="new-course-form" style="display: none;">
+        <h2>New Course</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea><br><br>
+            <button id="create-course-btn">Create Course</button>
+        </form>
+    </div>
+
+    <div id="student-details" style="display: none;">
+        <h2>Student Details</h2>
+        <p id="student-name"></p>
+        <p id="student-email"></p>
+        <button id="edit-student-btn">Edit</button>
+        <button id="delete-student-btn">Delete</button>
+    </div>
+
+    <div id="edit-student-form" style="display: none;">
+        <h2>Edit Student</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <button id="update-student-btn">Update</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

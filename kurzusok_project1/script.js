@@ -36,6 +36,7 @@ function getCourseDetails(courseId) {
         });
 }
 
+// Create new course
 document.getElementById("new-course-btn").addEventListener("click", () => {
     document.getElementById("new-course-form").style.display = "block";
 });
@@ -57,9 +58,12 @@ document.getElementById("create-course-btn").addEventListener("click", () => {
         });
 });
 
+// Add student to course
 document.getElementById("add-student-btn").addEventListener("click", () => {
+    // TO DO: implement adding student to course
 });
 
+// Get student details
 function getStudentDetails(studentId) {
     fetch(`${apiUrl}/students/${studentId}`)
         .then(response => response.json())

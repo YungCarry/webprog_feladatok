@@ -1,4 +1,4 @@
-async function getData() {
+function getData() {
     let username = document.getElementById(uname);
     
     const url = `https://www.codewars.com/api/v1/users/${username}`;

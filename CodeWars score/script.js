@@ -10,7 +10,16 @@ function getData() {
     return response.json();
   })
   .then(data => {
-    alert('A felhasználó pontja: '+data.ranks.overall.score)
+    
+    
+    if (data.username === "null")
+    {
+      console.log("Helytelen Felhasználónév");
+    }
+
+    else {
+      
+    }
   })
   .catch(error => {
     console.error('There was a problem with the fetch operation:', error);

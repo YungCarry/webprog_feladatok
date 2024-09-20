@@ -1,0 +1,12 @@
+{
+    "name": "texteditor",
+    "version": "1.0.0",
+    "description": "Egyszerű szöveg szerkesztő Node.js és Express segítségével",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }

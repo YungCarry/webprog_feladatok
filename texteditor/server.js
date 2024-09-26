@@ -1,37 +1,41 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
-const app = express();
+const cors = require('cors');
+
 const PORT = 3000;
+const app = express();
+const filePath = path.join(__dirname, 'public', 'szoveg.txt');
 
-
-app.use(express.json());
-
-
+// Middleware-ek beállítása
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(cors()); 
 
-
+// Szöveg olvasása
 app.get('/read', (req, res) => {
-    fs.readFile(path.join(__dirname, 'text.txt'), 'utf8', (err, data) => {
+    fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
-            return res.status(500).json({ error: 'Hiba a fájl olvasása közben' });
+            return res.status(500).send('Hiba történt a fájl olvasása közben.');
         }
-        res.json({ text: data });
+        res.send(data);
     });
 });
 
-
+// Szöveg mentése
 app.post('/save', (req, res) => {
     const newText = req.body.text;
-    fs.writeFile(path.join(__dirname, 'text.txt'), newText, 'utf8', (err) => {
+    fs.writeFile(filePath, newText, 'utf8', (err) => {
         if (err) {
-            return res.status(500).json({ error: 'Hiba a fájl írása közben' });
+            return res.status(500).send('Hiba történt a fájl mentése közben.');
         }
-        res.json({ message: 'Sikeres mentés' });
+        res.send('Szöveg mentve!');
     });
 });
 
-
-app.listen(PORT, () => {
-    console.log(`Szerver fut a http://localhost:${PORT} címen`);
+// Szerver indítása
+app.listen(PORT, () => { 
+    console.log(`Szerver működik a http://localhost:${PORT}`);
 });

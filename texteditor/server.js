@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const PORT = 3000;
 const app = express();
-const filePath = path.join(__dirname, 'public', 'szoveg.txt');
+const filePath = path.join(__dirname, 'public', 'text.txt');
 
 // Middleware-ek beállítása
 app.use(bodyParser.urlencoded({ extended: true }));

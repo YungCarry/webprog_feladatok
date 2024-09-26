@@ -1,30 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const textArea = document.getElementById('text-area');
-    const saveButton = document.getElementById('save-button');
-
-    // Szöveg beolvasása
+// Szöveg betöltése a szerverről
+function readFile() {
     fetch('/read')
-        .then(response => response.json())
-        .then(data => {
-            textArea.value = data.text;
-        })
-        .catch(error => console.error('Hiba a beolvasáskor:', error));
-
-    // Szöveg mentése
-    saveButton.addEventListener('click', () => {
-        const updatedText = textArea.value;
-        
-        fetch('/save', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ text: updatedText })
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data.message);
-        })
-        .catch(error => console.error('Hiba a mentéskor:', error));
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('text-area').value = data;
     });
-});
+}
+
+// Szöveg mentése a szerverre
+function saveFile() {
+    const text = document.getElementById('text-area').value;
+
+    fetch('/save', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+    });
+}
